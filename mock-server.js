@@ -545,7 +545,10 @@ app.patch('/api/petitions/:id/government-response', authenticateToken, async (re
     res.status(500).json({ error: 'Error updating government response' });
   }
 });
-
+// Root route for homepage
+app.get('/', (req, res) => {
+  res.send("AI Petition Platform Backend is Running 🚀");
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 }); 
