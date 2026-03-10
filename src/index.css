@@ -1,0 +1,168 @@
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+:root {
+  --primary-color: #6a11cb;
+  --primary-gradient: linear-gradient(to right, #6a11cb, #2575fc);
+  --secondary-color: #2575fc;
+  --accent-color: #ff7e5f;
+  --light-bg: #f9f7ff;
+  --dark-text: #333;
+  --light-text: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-bg);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom styles */
+.petition-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border-top: 4px solid var(--primary-color);
+}
+
+.petition-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(106, 17, 203, 0.2) !important;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: 30px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+.bg-primary {
+  background: var(--primary-gradient) !important;
+}
+
+/* Progress bar styling */
+.progress {
+  height: 8px !important;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgba(106, 17, 203, 0.1);
+}
+
+.progress-bar {
+  background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+  transition: width 1.5s ease-in-out;
+}
+
+/* Animation for signature count */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signature-count {
+  animation: countUp 0.5s ease-out;
+}
+
+/* Custom form styling */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid rgba(106, 17, 203, 0.2);
+  padding: 10px 15px;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(106, 17, 203, 0.25);
+}
+
+/* Page transitions */
+.page-transition {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar styling */
+.navbar {
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand i {
+  font-size: 1.4rem;
+}
+
+/* Card hover effect */
+.card {
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(106, 17, 203, 0.1);
+  transition: all 0.6s;
+  z-index: 0;
+}
+
+.card:hover::before {
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(106, 17, 203, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(106, 17, 203, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(106, 17, 203, 0);
+  }
+}
+
+.btn-pulse {
+  animation: pulse 2s infinite;
+} 
